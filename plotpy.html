@@ -1,0 +1,52 @@
+import plotly.graph_objs as go
+import pandas as pd
+
+# Function to parse the EPS file
+def parse_eps(file_path):
+    import re
+    with open(file_path, 'r') as f:
+        lines = f.readlines()
+    
+    pairs = []
+    for line in lines:
+        if not line.startswith('%'):
+            match = re.search(r'(\d+)\s+(\d+)\s+(\d+\.\d+)\s+ubox', line)
+            if match:
+                i, j, prob = int(match.group(1)), int(match.group(2)), float(match.group(3))
+                pairs.append((i-1, j-1, prob))  # Convert to 0-based index
+    return pairs
+
+# Load your EPS files for WT and mutant
+wt_eps_file = 'path/to/your_wt_file.eps'
+mutant_eps_file = 'path/to/your_mutant_file.eps'
+
+wt_pairs = parse_eps(wt_eps_file)
+mutant_pairs = parse_eps(mutant_eps_file)
+
+# Prepare data for Plotly
+wt_df = pd.DataFrame(wt_pairs, columns=['x', 'y', 'prob'])
+mutant_df = pd.DataFrame(mutant_pairs, columns=['x', 'y', 'prob'])
+
+# Create an interactive scatter plot
+fig = go.Figure()
+
+fig.add_trace(go.Scatter(
+    x=wt_df['x'], y=wt_df['y'], mode='markers',
+    marker=dict(size=5, color=wt_df['prob'], colorscale='Blues', showscale=True),
+    name='WT'
+))
+
+fig.add_trace(go.Scatter(
+    x=mutant_df['x'], y=mutant_df['y'], mode='markers',
+    marker=dict(size=5, color=mutant_df['prob'], colorscale='Reds', showscale=True),
+    name='Mutant'
+))
+
+fig.update_layout(
+    title='Significant Base Pairs (WT vs. Mutant)',
+    xaxis_title='Base Position',
+    yaxis_title='Base Position'
+)
+
+# Save the plot to an HTML file
+fig.write_html("plot.html")
