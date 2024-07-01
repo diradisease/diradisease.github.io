@@ -1,5 +1,13 @@
 import numpy as np
-import matplotlib.pyplot as plt
+import pandas as pd
+import plotly.graph_objects as go
+import plotly.io as pio
+
+# Define the parse_eps function (make sure to implement this according to your EPS file format)
+def parse_eps(eps_file):
+    # Dummy implementation, replace with actual parsing logic
+    # Assuming it returns a list of tuples (i, j, prob)
+    return [(i, i+1, np.random.rand()) for i in range(20)]
 
 # Assuming parse_eps is defined and you have two EPS files for WT and mutant
 wt_eps_file = 'wild-type.eps'
@@ -22,9 +30,10 @@ for i, j, prob in mutant_pairs:
 # Compute the difference matrix
 difference_matrix = np.abs(wt_bp_prob_matrix - mutant_bp_prob_matrix)
 
-import plotly.graph_objects as go
-
 # Prepare data for Plotly
+wt_significant_pairs = [(i, j, prob) for i, j, prob in wt_pairs if prob > 0.5]  # replace threshold with your criteria
+mutant_significant_pairs = [(i, j, prob) for i, j, prob in mutant_pairs if prob > 0.5]  # replace threshold with your criteria
+
 wt_df = pd.DataFrame(wt_significant_pairs, columns=['x', 'y', 'prob'])
 mutant_df = pd.DataFrame(mutant_significant_pairs, columns=['x', 'y', 'prob'])
 
@@ -49,4 +58,5 @@ fig.update_layout(
     yaxis_title='Base Position'
 )
 
-fig.show()
+# Save the plot as an HTML file
+pio.write_html(fig, file='plot.html', auto_open=False)
