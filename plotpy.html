@@ -17,8 +17,8 @@ def parse_eps(file_path):
     return pairs
 
 # Load your EPS files for WT and mutant
-wt_eps_file = 'wild-type.eps'
-mutant_eps_file = 'mutation1.eps'
+wt_eps_file = 'path/to/your/wild-type.eps'
+mutant_eps_file = 'path/to/your/mutation1.eps'
 
 wt_pairs = parse_eps(wt_eps_file)
 mutant_pairs = parse_eps(mutant_eps_file)
@@ -49,4 +49,4 @@ fig.update_layout(
 )
 
 # Save the plot to an HTML file
-fig.write_html("plot.html")
+fig.write_html("plotpy.html")
