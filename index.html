@@ -10,7 +10,10 @@
     <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700|Roboto&display=swap" rel="stylesheet">
+    <!-- Plotly.js -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- Axios for data fetching -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <style>
         body, html {
             font-family: 'Nunito Sans', sans-serif;
@@ -81,15 +84,31 @@
             <h1 class="title has-text-centered">Interactive Plotly Visualization</h1>
             <div id="myPlot"></div>
             <script>
-                var data = [
-                    {
-                        x: [1, 2, 3, 4, 5],
-                        y: [1, 9, 4, 7, 5],
-                        type: 'scatter'
-                    }
-                ];
-
-                Plotly.newPlot('myPlot', data);
+                // Fetch the data and plot
+                axios.get('path_to_your_plot_data.json')  // Update the path to where your JSON file is hosted
+                    .then(function (response) {
+                        const data = response.data;
+                        const traces = [{
+                            x: data.map(d => d.x),
+                            y: data.map(d => d.y),
+                            mode: 'markers',
+                            marker: {
+                                size: data.map(d => Math.sqrt(d.prob) * 10),
+                                color: data.map(d => d.type === 'WT' ? 'orange' : 'blue')
+                            },
+                            type: 'scatter'
+                        }];
+                        const layout = {
+                            title: 'Base-Pair Probabilities (WT vs. Mendonca et al)',
+                            xaxis: { title: 'Base Position' },
+                            yaxis: { title: 'Base Position' },
+                            legend: { title: 'Type' }
+                        };
+                        Plotly.newPlot('myPlot', traces, layout);
+                    })
+                    .catch(function (error) {
+                        console.error('Error loading the data:', error);
+                    });
             </script>
         </div>
     </section>
@@ -99,8 +118,3 @@
     </footer>
 </body>
 </html>
-
-    </footer>
-</body>
-</html>
-
