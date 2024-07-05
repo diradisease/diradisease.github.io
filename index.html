@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Our Visualization Project!</title>
+    <!-- Bulma CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700|Roboto&display=swap" rel="stylesheet">
     <style>
         body, html {
             font-family: 'Nunito Sans', sans-serif;
             background-color: #f4f4f9;
+        }
+        .navbar {
+            background-color: #0056b3;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         .hero {
             background-color: #0056b3;
@@ -18,10 +26,32 @@
         .footer {
             background-color: #323639;
             color: white;
+            padding: 2rem 1.5rem;
+        }
+        .title, .subtitle {
+            color: white !important;
         }
     </style>
 </head>
 <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="index.html">
+                <strong>Project Logo</strong>
+            </a>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="second.html">Visualizations</a>
+            </div>
+        </div>
+    </nav>
+
     <section class="hero is-medium">
         <div class="hero-body">
             <div class="container has-text-centered">
@@ -31,7 +61,7 @@
                 <h2 class="subtitle">
                     Explore interactive visualizations and insights.
                 </h2>
-                <a href="second.html" class="button is-info is-large">View Visualizations</a>
+                <a href="second.html" class="button is-light is-large">View Visualizations</a>
             </div>
         </div>
     </section>
@@ -45,4 +75,3 @@
     </footer>
 </body>
 </html>
-
