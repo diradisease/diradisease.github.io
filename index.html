@@ -84,8 +84,7 @@
             <h1 class="title has-text-centered">Interactive Plotly Visualization</h1>
             <div id="myPlot"></div>
             <script>
-                // Fetch the data and plot
-                axios.get('https://diradisease.github.io/data/plot_data.json')  // Update the path to where your JSON file is hosted
+                axios.get('https://diradisease.github.io/data/plot_data.json')
                     .then(function (response) {
                         const data = response.data;
                         const traces = [{
@@ -93,7 +92,7 @@
                             y: data.map(d => d.y),
                             mode: 'markers',
                             marker: {
-                                size: data.map(d => Math.sqrt(d.prob) * 10),
+                                size: data.map(d => Math.sqrt(d.prob) * 10),  // Scaled for better visibility
                                 color: data.map(d => d.type === 'WT' ? 'orange' : 'blue')
                             },
                             type: 'scatter'
@@ -102,9 +101,10 @@
                             title: 'Base-Pair Probabilities (WT vs. Mendonca et al)',
                             xaxis: { title: 'Base Position' },
                             yaxis: { title: 'Base Position' },
-                            legend: { title: 'Type' }
+                            legend: { title: 'Type' },
+                            margin: { t: 30 } // Optional: Adjust top margin to give more space for the title
                         };
-                        Plotly.newPlot('myPlot', traces, layout);
+                        Plotly.newPlot('myPlot', [traces], layout);
                     })
                     .catch(function (error) {
                         console.error('Error loading the data:', error);
