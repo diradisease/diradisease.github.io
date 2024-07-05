@@ -3,79 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome!</title>
+    <title>Welcome to Our Visualization Project!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Basic reset */
-        body, h1, p, a {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        body, html {
+            font-family: 'Nunito Sans', sans-serif;
+            background-color: #f4f4f9;
         }
-
-        /* Color and typography theme */
-        :root {
-            --primary-color: #0056b3;
-            --text-color: #333;
-            --background-color: #fff;
-            --footer-background-color: #f8f9fa;
-            --footer-text-color: #6c757d;
-        }
-
-        body {
-            color: var(--text-color);
-            background-color: var(--background-color);
-            line-height: 1.6;
-            padding: 20px;
-            text-align: center;
-        }
-
-        header {
-            background-color: var(--primary-color);
-            color: #ffffff;
-            padding: 40px 20px;
-            font-size: 32px;
-            font-weight: bold;
-        }
-
-        section {
-            padding: 20px;
-            margin: 30px auto;
-            max-width: 800px;
-            background-color: #ffffff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        a.button {
-            font-size: 18px;
-            text-decoration: none;
+        .hero {
+            background-color: #0056b3;
             color: white;
-            background-color: var(--primary-color);
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: background-color 0.3s, transform 0.3s;
         }
-
-        a.button:hover {
-            background-color: #004494;
-            transform: translateY(-2px);
-        }
-
-        footer {
-            padding: 10px;
-            background-color: var(--footer-background-color);
-            color: var(--footer-text-color);
-            font-size: 14px;
+        .footer {
+            background-color: #323639;
+            color: white;
         }
     </style>
 </head>
 <body>
-    <header>Welcome to Our Visualization Project!</header>
-    <section>
-        <p>Explore dynamic insights and comprehensive data visualizations to uncover patterns and trends across various domains.</p>
+    <section class="hero is-medium">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title">
+                    Welcome to Our Visualization Project!
+                </h1>
+                <h2 class="subtitle">
+                    Explore interactive visualizations and insights.
+                </h2>
+                <a href="second.html" class="button is-info is-large">View Visualizations</a>
+            </div>
+        </div>
     </section>
-    <a href="second.html" class="button">View Visualizations</a>
-    <footer>
-        &copy; 2024 Visualization Project. All rights reserved.
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                © 2024 Visualization Project. All rights reserved.
+            </p>
+        </div>
     </footer>
 </body>
 </html>
