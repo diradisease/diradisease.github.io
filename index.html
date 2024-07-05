@@ -44,10 +44,10 @@
             background-color: #d0d0d0; /* Slightly darker grey for visualization section */
             padding: 40px 0;
         }
-        #myPlot {
+        iframe {
             width: 100%;
-            max-width: 700px;
-            margin: auto;
+            height: 800px; /* Adjusted height to accommodate the embedded notebook */
+            border: none;
         }
     </style>
 </head>
@@ -83,36 +83,7 @@
     <section id="visualization" class="section">
         <div class="container">
             <h1 class="title has-text-centered">Interactive Plotly Visualization</h1>
-            <div id="myPlot">
-            <script>
-                axios.get('https://diradisease.github.io/data/plot_data.json')
-                    .then(function (response) {
-                        const data = response.data;
-                        const traces = [{
-                            x: data.map(d => d.x),
-                            y: data.map(d => d.y),
-                            mode: 'markers',
-                            marker: {
-                                size: data.map(d => Math.sqrt(d.prob) * 10),  // Scaled for better visibility
-                                color: data.map(d => d.type === 'WT' ? 'orange' : 'blue')
-                            },
-                            type: 'scatter'
-                        }];
-                        const layout = {
-                            title: 'Base-Pair Probabilities (WT vs. Mendonca et al)',
-                            xaxis: { title: 'Base Position' },
-                            yaxis: { title: 'Base Position' },
-                            legend: { title: 'Type' },
-                            margin: { t: 30 } // Optional: Adjust top margin to give more space for the title
-                        };
-                        Plotly.newPlot('myPlot', [traces], layout);
-                    })
-                    .catch(function (error) {
-                        console.error('Error loading the data:', error);
-                    });
-            </script>                  
-            </div>
-
+            <iframe src="https://colab.research.google.com/drive/[Your-Notebook-ID]"></iframe>
         </div>
     </section>
 
