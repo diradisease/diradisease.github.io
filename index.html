@@ -14,7 +14,7 @@
     <style>
         body, html {
             font-family: 'Nunito Sans', sans-serif;
-            background-color: #f4f4f9;
+            background-color: #f4f4f9; /* overall background for any overflow */
             margin: 0;
             padding: 0;
             height: 100%;
@@ -29,17 +29,14 @@
             padding: 20px;
             text-align: center;
         }
-        #visualization {
+        .section, .hero {
+            background-color: #e8e8e8; /* Uniform Light Grey for all content sections */
+            padding: 40px 0;
+        }
+        #myPlot {
             width: 100%;
             max-width: 700px;
             margin: auto;
-            padding: 20px;
-        }
-        .section {
-            padding: 40px 0;
-        }
-        .hero {
-            background-color: #e8e8e8; /* Light grey for the hero section */
         }
     </style>
 </head>
@@ -95,3 +92,4 @@
     </footer>
 </body>
 </html>
+
