@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RNA Secondary Structure Prediction</title>
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+    <!-- Font Awesome for Icons -->
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700|Roboto&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            font-family: 'Nunito Sans', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .navbar, .footer {
+            background-color: #f1c40f;
+            color: white;
+        }
+        .footer {
+            padding: 20px;
+            text-align: center;
+        }
+        .section {
+            padding: 40px 0;
+        }
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        button {
+            cursor: pointer;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            background-color: #f1c40f;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #d4ac0d;
+        }
+        .images-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .images-container figure {
+            margin: 0;
+            text-align: center;
+        }
+        .images-container img {
+            max-width: 100%;
+            height: auto;
+        }
+        h1, h2 {
+            color: #f1c40f;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="index.html">
+                <strong>Visualization Project</strong>
+            </a>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="index.html#home">Home</a>
+                <a class="navbar-item" href="rna_secondary_structure.html">RNA Secondary Structure Prediction</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Detailed content section -->
+    <section class="section">
+        <div class="container has-text-centered">
+            <h1 class="title">Homozygous 22,216 bp deletion</h1>
+            <p class="editable-text">Reference: Mendonca, L. O. et al. Deficiency of interleukin-1 receptor Antagonist (DIRA): report of the first Indian patient and a novel deletion affecting IL1RN. Journal of Clinical Immunology 37, 445–451 (2017).</p>
+            <div class="buttons-container">
+                <button onclick="window.location.href='https://colab.research.google.com/drive/1dvs8aphdxfyngzQVi4MytWV2ryIMvyYp?usp=sharing';">WT vs. Mutant Base-Pair Probabilities</button>
+                <button onclick="window.location.href='http://rna.tbi.univie.ac.at//cgi-bin/RNAWebSuite/RNAfold.cgi?PAGE=3&ID=QZlz6butia';">Mutant RNA Prediction</button>
+                <button onclick="window.location.href='http://rna.tbi.univie.ac.at//cgi-bin/RNAWebSuite/RNAfold.cgi?PAGE=3&ID=cUU4_uH_nE';">WT RNA Prediction</button>
+            </div>
+            <div class="images-container">
+                <figure>
+                    <img src="https://raw.githubusercontent.com/diradisease/data/main/rnastructure/WT.png" alt="WT Structure">
+                    <figcaption>WT Structure</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://raw.githubusercontent.com/diradisease/data/main/rnastructure/MendoncaIndian.png" alt="Mutant">
+                    <figcaption>Mutant Structure</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        © 2024 Visualization Project. All rights reserved.
+    </footer>
+</body>
+</html>
