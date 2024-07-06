@@ -10,11 +10,6 @@
     <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700|Roboto&display=swap" rel="stylesheet">
-    <!-- Plotly.js -->
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <!-- Axios for data fetching -->
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  
     <style>
         body, html {
             font-family: 'Nunito Sans', sans-serif;
@@ -40,14 +35,23 @@
             background-color: #e8e8e8; /* Light grey for the hero section */
             padding: 40px 0;
         }
-        #visualization {
-            background-color: #d0d0d0; /* Slightly darker grey for visualization section */
-            padding: 40px 0;
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px; /* Space between buttons */
         }
-        iframe {
-            width: 100%;
-            height: 800px; /* Adjusted height to accommodate the embedded notebook */
+        button {
+            cursor: pointer;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px; /* Rounded corners for the buttons */
             border: none;
+            background-color: #0056b3; /* Deep Blue to match the navbar and footer */
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #00397a; /* Slightly darker blue when hovered */
         }
     </style>
 </head>
@@ -66,7 +70,7 @@
         <div class="navbar-menu">
             <div class="navbar-start">
                 <a class="navbar-item" href="#home">Home</a>
-                <a class="navbar-item" href="#visualization">Visualizations</a>
+                <a class="navbar-item" href="#links">Links</a>
             </div>
         </div>
     </nav>
@@ -80,10 +84,14 @@
         </div>
     </section>
 
-    <section id="visualization" class="section">
-        <div class="container">
-            <h1 class="title has-text-centered">Interactive Plotly Visualization</h1>
-            <iframe src="https://nbviewer.jupyter.org/github/yourusername/yourrepository/blob/main/your_notebook.ipynb" width="100%" height="800px" frameborder="0"></iframe>
+    <section id="links" class="section">
+        <div class="container has-text-centered">
+            <h1 class="title">Useful Links</h1>
+            <div class="buttons-container">
+                <button onclick="window.location.href='LINK1_URL';">Link 1</button>
+                <button onclick="window.location.href='LINK2_URL';">Link 2</button>
+                <button onclick="window.location.href='LINK3_URL';">Link 3</button>
+            </div>
         </div>
     </section>
 
