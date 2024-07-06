@@ -56,6 +56,16 @@
         .editable-text {
             margin-bottom: 20px; /* Space above the buttons */
         }
+        .images-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Space between images */
+            margin-top: 20px; /* Space above the images */
+        }
+        .images-container img {
+            max-width: 100%; /* Ensures images are responsive */
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -96,6 +106,10 @@
                 <button onclick="window.location.href='http://rna.tbi.univie.ac.at//cgi-bin/RNAWebSuite/RNAfold.cgi?PAGE=3&ID=QZlz6butia';">Mutant RNA Prediction</button>
                 <button onclick="window.location.href='LINK3_URL';">WT RNA Prediction</button>
             </div>
+            <div class="images-container">
+                <img src="IMAGE1_URL" alt="Description of Image 1">
+                <img src="IMAGE2_URL" alt="Description of Image 2">
+            </div>
         </div>
     </section>
 
@@ -104,3 +118,4 @@
     </footer>
 </body>
 </html>
+
