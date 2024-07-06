@@ -13,7 +13,7 @@
     <style>
         body, html {
             font-family: 'Nunito Sans', sans-serif;
-            background-color: #f4f4f9; /* Light grey background for any overflow */
+            background-color: #f4f4f9;
             margin: 0;
             padding: 0;
             height: 100%;
@@ -21,57 +21,19 @@
             flex-direction: column;
         }
         .navbar, .footer {
-            background-color: #f1c40f; /* Changed to yellow for header and footer */
+            background-color: #f1c40f;
             color: white;
         }
         .footer {
             padding: 20px;
             text-align: center;
         }
-        .section {
-            padding: 40px 0;
-        }
         .hero {
-            background-color: #e8e8e8; /* Light grey for the hero section */
+            background-color: #e8e8e8;
             padding: 40px 0;
-        }
-        .buttons-container {
-            display: flex;
-            justify-content: center;
-            gap: 10px; /* Space between buttons */
-        }
-        button {
-            cursor: pointer;
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 5px; /* Rounded corners for the buttons */
-            border: none;
-            background-color: #f1c40f; /* Yellow to match the navbar and footer */
-            color: white;
-            transition: background-color 0.3s ease;
-        }
-        button:hover {
-            background-color: #d4ac0d; /* Slightly darker yellow when hovered */
-        }
-        .editable-text {
-            margin-bottom: 20px; /* Space above the buttons */
-        }
-        .images-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px; /* Space between images */
-            margin-top: 20px; /* Space above the images */
-        }
-        .images-container figure {
-            margin: 0; /* Removes default margin */
-            text-align: center;
-        }
-        .images-container img {
-            max-width: 100%; /* Ensures images are responsive */
-            height: auto;
         }
         h1, h2 {
-            color: #f1c40f; /* Yellow color for headers */
+            color: #f1c40f;
         }
     </style>
 </head>
@@ -89,8 +51,8 @@
         </div>
         <div class="navbar-menu">
             <div class="navbar-start">
-                <a class="navbar-item" href="#home">Home</a>
-                <a class="navbar-item" href="#links">RNA Secondary Structure Prediction</a>
+                <a class="navbar-item" href="index.html#home">Home</a>
+                <a class="navbar-item" href="rna_secondary_structure.html">RNA Secondary Structure Prediction</a>
             </div>
         </div>
     </nav>
@@ -100,28 +62,6 @@
             <div class="container has-text-centered">
                 <h1 class="title">Welcome to Our Visualization Project!</h1>
                 <h2 class="subtitle">Explore interactive visualizations and insights.</h2>
-            </div>
-        </div>
-    </section>
-
-    <section id="links" class="section">
-        <div class="container has-text-centered">
-            <h1 class="title">Homozygous 22,216 bp deletion</h1>
-            <p class="editable-text">Reference: Mendonca, L. O. et al. Deficiency of interleukin-1 receptor Antagonist (DIRA): report of the first Indian patient and a novel deletion affecting IL1RN. Journal of Clinical Immunology 37, 445–451 (2017).</p>
-            <div class="buttons-container">
-                <button onclick="window.location.href='https://colab.research.google.com/drive/1dvs8aphdxfyngzQVi4MytWV2ryIMvyYp?usp=sharing';">WT vs. Mutant Base-Pair Probabilities</button>
-                <button onclick="window.location.href='http://rna.tbi.univie.ac.at//cgi-bin/RNAWebSuite/RNAfold.cgi?PAGE=3&ID=QZlz6butia';">Mutant RNA Prediction</button>
-                <button onclick="window.location.href='http://rna.tbi.univie.ac.at//cgi-bin/RNAWebSuite/RNAfold.cgi?PAGE=3&ID=cUU4_uH_nE';">WT RNA Prediction</button>
-            </div>
-            <div class="images-container">
-                <figure>
-                    <img src="https://raw.githubusercontent.com/diradisease/data/main/rnastructure/WT.png" alt="WT Structure">
-                    <figcaption>WT Structure</figcaption>
-                </figure>
-                <figure>
-                    <img src="https://raw.githubusercontent.com/diradisease/data/main/rnastructure/MendoncaIndian.png" alt="Mutant">
-                    <figcaption>Mutant Structure</figcaption>
-                </figure>
             </div>
         </div>
     </section>
