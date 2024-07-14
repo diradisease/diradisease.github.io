@@ -15,48 +15,50 @@
     <style>
         body, html {
             font-family: 'Nunito Sans', sans-serif;
-            background-color: #f4f4f9;
+            background-color: #f4f4f9; /* Adjusted to match the theme of other pages */
             margin: 0;
             padding: 0;
-            height: 100%;
+            min-height: 100%;
             display: flex;
             flex-direction: column;
         }
         .navbar, .footer {
-            background-color: #34568B; /* Darker blue for better contrast */
+            background-color: #4A90E2; /* Adjusted to match the theme of other pages */
             color: white;
         }
         .footer {
-            padding: 40px;
+            padding: 20px 40px;
             text-align: center;
+            margin-top: auto; /* Ensures footer is at the bottom */
         }
         .hero {
             background-color: #e8e8e8;
             padding: 40px 0;
         }
         h1, h2 {
-            color: #34568B; /* Echoing the navbar and footer color */
+            color: #4A90E2; /* Echoing the navbar and footer color */
         }
         .buttons-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px;
+            gap: 20px; /* Increased gap between buttons */
             margin-top: 20px;
         }
         .buttons-container a {
-            padding: 10px 20px;
+            padding: 15px 25px; /* Increased padding for better touch */
             font-size: 16px;
             color: white;
-            background-color: #4A90E2; /* Lighter blue for a modern feel */
+            background-color: #34568B; /* Adjusted to match the theme */
             border-radius: 5px;
             text-decoration: none;
             transition: background-color 0.3s ease;
         }
         .buttons-container a:hover {
-            background-color: #34568B; /* Match navbar on hover */
+            background-color: #23395D; /* Darker on hover for better UI feedback */
         }
         .section {
+            padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -85,28 +87,4 @@
                 <span aria-hidden="true"></span>
             </a>
         </div>
-        <div class="navbar-menu">
-            <div class="navbar-start">
-                <a class="navbar-item" href="rna_secondary_structure.html">RNA Secondary Structure Prediction</a>
-                <a class="navbar-item" href="biopython.html">Biopython Computation</a>
-            </div>
-        </div>
-    </nav>
-
-    <section class="section">
-        <div class="container has-text-centered">
-            <h1 class="title">Code for Biopython Computation</h1>
-            <div class="buttons-container">
-                <a href="https://www.dropbox.com/scl/fo/almabhv2kjttoq8cb7oza/AECIiqt12Cxm24YrVhMUlOk?rlkey=osjdlh6n1qapeqitavhmroefr&st=j0nh761r&dl=0" target="_blank">Raw Data for Code</a>
-                <a href="https://colab.research.google.com/drive/1zjcJrhrmYvOrfE0eUVXL4Nc3qM57KUdK?usp=sharing" target="_blank">Biopython Program Code</a>
-                <a href="https://colab.research.google.com/drive/1A864lfc6mjdDv23q-7VRZFWsDZ36_vcg?usp=sharing" target="_blank">R Code for Plotting Data</a>
-            </div>
-        </div>
-        <p class="reference-text">All necessary code is provided to replicate the experimental protocol described in the manuscript. Rheumatology 59, 3259–3263 (2020).</p>
-    </section>
-
-    <footer class="footer">
-        Copyright © 2024 Joe Mama. All rights reserved.
-    </footer>
-</body>
-</html>
+        <div class="
