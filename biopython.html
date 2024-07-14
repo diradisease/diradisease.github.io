@@ -37,12 +37,30 @@
         h1, h2 {
             color: #f1c40f;
         }
+        .links-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .links-container a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #f1c40f;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .links-container a:hover {
+            background-color: #d4ac0d;
+        }
     </style>
 </head>
 <body>
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <a class="navbar-item" href="#home">
+            <a class="navbar-item" href="index.html">
                 <strong>DIRA</strong>
             </a>
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
@@ -54,7 +72,7 @@
         <div class="navbar-menu">
             <div class="navbar-start">
                 <a class="navbar-item" href="rna_secondary_structure.html">RNA Secondary Structure Prediction</a>
-                <a class="navbar-item" href="biopython.html">New Page</a>
+                <a class="navbar-item" href="biopython.html">Biopython Computation</a>
             </div>
         </div>
     </nav>
@@ -64,6 +82,10 @@
             <div class="container has-text-centered">
                 <h1 class="title">Welcome to the New Page</h1>
                 <h2 class="subtitle">This is a new section of the DIRA website.</h2>
+                <div class="links-container">
+                    <a href="https://colab.research.google.com/drive/your_colab_code_link" target="_blank">Google Colab Code</a>
+                    <a href="https://your_data_link" target="_blank">Data</a>
+                </div>
             </div>
         </div>
     </section>
